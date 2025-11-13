@@ -5,7 +5,6 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 
 export default function VerificacionesPage() {
-  const [user, setUser] = useState<any>(null);
   const [empresa, setEmpresa] = useState<any>(null);
   const [verificaciones, setVerificaciones] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -18,7 +17,7 @@ export default function VerificacionesPage() {
         const {
           data: { user: currentUser },
         } = await supabase.auth.getUser();
-        setUser(currentUser);
+
 
         if (!currentUser) {
           window.location.href = "/login";

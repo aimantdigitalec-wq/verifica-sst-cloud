@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
+  // Configuración para Vercel
+  swcMinify: true,
+  productionBrowserSourceMaps: false,
 };
 
 export default nextConfig;

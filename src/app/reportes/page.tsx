@@ -13,7 +13,6 @@ interface Informe {
 }
 
 export default function ReportesPage() {
-  const [user, setUser] = useState<any>(null);
   const [empresa, setEmpresa] = useState<any>(null);
   const [informes, setInformes] = useState<Informe[]>([]);
   const [loading, setLoading] = useState(true);
@@ -25,7 +24,7 @@ export default function ReportesPage() {
         const {
           data: { user: currentUser },
         } = await supabase.auth.getUser();
-        setUser(currentUser);
+
 
         if (!currentUser) {
           window.location.href = "/login";

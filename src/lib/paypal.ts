@@ -18,11 +18,6 @@ if (!paypalConfig.username || !paypalConfig.password || !paypalConfig.signature)
   console.warn("PayPal credentials not fully configured");
 }
 
-const PAYPAL_ENDPOINT =
-  paypalConfig.mode === "sandbox"
-    ? "https://api.sandbox.paypal.com/nvp"
-    : "https://api.paypal.com/nvp";
-
 // Planes de suscripción con precios en USD
 export const PLANES_SUSCRIPCION_PAYPAL = {
   microempresa: {
@@ -90,7 +85,6 @@ export const PLANES_SUSCRIPCION_PAYPAL = {
  */
 export async function createRecurringPayment(
   planId: string,
-  email: string,
   returnUrl: string,
   cancelUrl: string
 ): Promise<string> {

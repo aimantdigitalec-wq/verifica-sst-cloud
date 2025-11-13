@@ -12,10 +12,11 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 // Cliente del servidor (solo para uso en API routes)
 export function createServerSupabaseClient() {
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
 
-  if (!serviceRoleKey) {
-    throw new Error("Missing SUPABASE_SERVICE_ROLE_KEY environment variable");
+  if (!serviceRoleKey || !url) {
+    throw new Error("Missing Supabase environment variables");
   }
 
-  return createClient(supabaseUrl, serviceRoleKey);
+  return createClient(url, serviceRoleKey);
 }

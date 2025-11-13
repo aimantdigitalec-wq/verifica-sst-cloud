@@ -7,7 +7,7 @@ if (!stripeSecretKey) {
 }
 
 export const stripe = new Stripe(stripeSecretKey, {
-  apiVersion: "2024-11-20",
+  apiVersion: "2025-10-29.clover",
 });
 
 // Planes de suscripción

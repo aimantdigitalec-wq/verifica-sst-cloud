@@ -90,10 +90,10 @@ export default function PlanesPage() {
                   <div>
                     <h3 className="text-xl font-bold mb-2">{plan.nombre}</h3>
                     <p className="text-sm opacity-90">
-                      {plan.numero_trabajadores_min}-
-                      {plan.numero_trabajadores_max === Infinity
+                      {plan.trabajadores_min}-
+                      {plan.trabajadores_max === Infinity
                         ? "+"
-                        : plan.numero_trabajadores_max}{" "}
+                        : plan.trabajadores_max}{" "}
                       trabajadores
                     </p>
                   </div>

@@ -38,7 +38,6 @@ export async function POST(request: NextRequest) {
     // Crear pago recurrente en PayPal
     const checkoutUrl = await createRecurringPayment(
       planId,
-      empresa.email_contacto,
       returnUrl,
       cancelUrl
     );
